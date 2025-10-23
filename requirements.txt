@@ -1,0 +1,11 @@
+llama-index
+llama-index-llms-openrouter
+pydantic-settings
+llama-index-llms-huggingface-api
+llama-index-embeddings-huggingface-api
+llama-index-vector-stores-chroma
+llama-index-retrievers-bm25
+llama-index-embeddings-gemini
+llama-index-llms-gemini
+streamlit
+chromadb

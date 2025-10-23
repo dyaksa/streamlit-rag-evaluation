@@ -1,0 +1,25 @@
+services:
+  resume-evaluation-app:
+    build: .
+    container_name: resume-evaluation-app
+    ports:
+      - "${APP_PORT:-8501}:${APP_PORT:-8501}"
+    environment:
+      - APP_HOST=${APP_HOST:-0.0.0.0}
+      - APP_PORT=${APP_PORT:-8501}
+      - OPEN_ROUTER_API_KEY=${OPEN_ROUTER_API_KEY}
+      - OPEN_ROUTER_MODEL=${OPEN_ROUTER_MODEL}
+      - OPEN_ROUTER_BASE_URL=${OPEN_ROUTER_BASE_URL}
+      - HUGGINGFACE_API_KEY=${HUGGINGFACE_API_KEY}
+      - HUGGINGFACE_LLM_MODEL=${HUGGINGFACE_LLM_MODEL}
+      - HUGGINGFACE_EMBEDDING_MODEL=${HUGGINGFACE_EMBEDDING_MODEL}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - GEMINI_MODEL_LLM=${GEMINI_MODEL_LLM}
+      - GEMINI_MODEL_EMBEDDING=${GEMINI_MODEL_EMBEDDING}
+    restart: unless-stopped
+    volumes:
+      - ./:/app
+
+volumes:
+  resume-evaluation-data:
+    driver: local

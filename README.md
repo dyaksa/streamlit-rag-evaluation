@@ -53,10 +53,10 @@ requirements.txt              # Python dependencies
 flowchart TD
     U[User Uploads CV + Enters Job Description] --> C[Clean & Normalize Job Description]
     C --> S[Split Into Chunks]
-    S --> R[Create Fusion Retriever (Vector + BM25)]
+    S --> R[Create Fusion Retriever Vector + BM25]
     R --> Q[Retrieve Relevant Job Context]
     U --> E[Extract Candidate Info]
-    C --> RB[Extract Rubrics (skills, experiences, projects)]
+    C --> RB[Extract Rubrics skills, experiences, projects]
     Q --> CMP[Compare Resume vs Job Context & Rubrics]
     RB --> CMP
     E --> CMP

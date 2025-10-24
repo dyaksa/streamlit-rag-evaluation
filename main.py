@@ -56,7 +56,7 @@ def save_upload_to_disk(uploaded_file, suffix=".pdf"):
     return st.session_state[key]
 
 
-def streamlit_interface():
+def main():
     try:
         st.title("Resume Evaluation with LLM 🧠")
 
@@ -122,4 +122,5 @@ def streamlit_interface():
         st.error(f"An error occurred: {e}")
 
 
-streamlit_interface()
+if __name__ == "__main__":
+    main()

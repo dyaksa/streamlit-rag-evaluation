@@ -61,7 +61,7 @@ def main():
         st.title("Resume Evaluation with LLM 🧠")
 
         uploaded_file = st.file_uploader("Upload your CV (PDF format)", type=["pdf"])
-        job_description = st.text_area("Enter Job Description", height=200)
+        job_description = st.text_area("Enter Job Description", height=500)
         button = st.button("Evaluate Resume")
 
         if button and uploaded_file is not None and job_description.strip() != "":

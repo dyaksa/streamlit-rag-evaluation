@@ -122,5 +122,4 @@ def streamlit_interface():
         st.error(f"An error occurred: {e}")
 
 
-if __name__ == "__main__":
-    streamlit_interface()
+streamlit_interface()

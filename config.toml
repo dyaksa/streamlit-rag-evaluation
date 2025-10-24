@@ -1,0 +1,17 @@
+[server]
+headless = true
+port = 8501
+enableCORS = false            # set false hanya jika di belakang reverse proxy
+enableXsrfProtection = true
+baseUrlPath = ""              # isi misal "app" jika di-serve di /app
+
+[client]
+toolbarMode = "minimal"
+showErrorDetails = false      # hide stacktrace untuk user
+
+[runner]
+fastReruns = false
+enforceSerializableSessionState = true
+
+[theme]
+base = "dark"

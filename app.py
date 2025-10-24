@@ -5,8 +5,8 @@ from module.collection import (
     retrieve,
     create_query_fusion_retriever,
 )
-from module.embedding_agent import get_embedding_huggingface
-from module.llm_agent import gemini_llm
+from module.embedding_agent import get_embedding_mistral
+from module.llm_agent import mistral_llm, gemini_llm
 from module.prompt_template import (
     extracted_resume,
     compare_cv_from_job_description,
@@ -91,7 +91,7 @@ def streamlit_interface():
                 status.markdown("🧠 Initializing LLM & embeddings...")
                 llm = gemini_llm(temperature=0.0)
 
-                embedding = get_embedding_huggingface()
+                embedding = get_embedding_mistral()
                 index = create_query_fusion_retriever(
                     chunks, embedding=embedding, llm=llm, top_k=3
                 )

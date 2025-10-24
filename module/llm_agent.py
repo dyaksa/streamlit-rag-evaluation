@@ -1,7 +1,24 @@
 from llama_index.llms.openrouter import OpenRouter
 from llama_index.llms.openai_like import OpenAILike
 from llama_index.llms.gemini import Gemini
+from llama_index.llms.mistralai import MistralAI
 from module.config import settings
+
+
+def mistral_llm(
+    temperature: float = 0.1,
+    max_retries: int = 3,
+    max_tokens: int = 500,
+) -> MistralAI:
+    llm = MistralAI(
+        model=settings.MISTRAL_LLM_MODEL,
+        api_key=settings.MISTRAL_API_KEY,
+        temperature=temperature,
+        max_retries=max_retries,
+        max_tokens=max_tokens,
+    )
+
+    return llm
 
 
 def gemini_llm(

@@ -54,6 +54,13 @@ class Config(BaseSettings):
         description="Gemini embedding model",
     )
 
+    MISTRAL_API_KEY: str = Field(
+        default="", alias="MISTRAL_API_KEY", description="Mistral API key"
+    )
+    MISTRAL_LLM_MODEL: str = Field(
+        default="", alias="MISTRAL_LLM_MODEL", description="Mistral LLM model"
+    )
+
     model_config = SettingsConfigDict(
         env_file=".env", env_file_encoding="utf-8", case_sensitive=False, extra="ignore"
     )

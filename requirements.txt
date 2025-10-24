@@ -6,6 +6,8 @@ llama-index-embeddings-huggingface-api
 llama-index-vector-stores-chroma
 llama-index-retrievers-bm25
 llama-index-embeddings-gemini
+llama-index-llms-mistralai
+llama-index-embeddings-mistralai
 llama-index-llms-gemini
 streamlit
 chromadb

@@ -1,6 +1,15 @@
 from module.config import settings
 from llama_index.embeddings.huggingface_api import HuggingFaceInferenceAPIEmbedding
 from llama_index.embeddings.gemini import GeminiEmbedding
+from llama_index.embeddings.mistralai import MistralAIEmbedding
+
+
+def get_embedding_mistral() -> MistralAIEmbedding:
+    embedding = MistralAIEmbedding(
+        api_key=settings.MISTRAL_API_KEY,
+    )
+
+    return embedding
 
 
 def get_embedding_huggingface() -> HuggingFaceInferenceAPIEmbedding:

@@ -1,5 +1,6 @@
 from llama_index.core.llms import ChatMessage, MessageRole
-from module.llm_agent import gemini_llm
+from llama_index.core.prompts import ChatPromptTemplate
+from module.llm_agent import mistral_llm, gemini_llm
 from pydantic import BaseModel, Field
 import json
 
@@ -13,7 +14,7 @@ class CandidateInfo(BaseModel):
 
 
 def extracted_resume(resume_text: str) -> str:
-    prompt = f"""
+    prompt = """
     Resume:
     {resume_text}
     """
@@ -32,9 +33,12 @@ def extracted_resume(resume_text: str) -> str:
         ),
     ]
 
+    chat = ChatPromptTemplate(message_templates=messages)
     llm = gemini_llm(temperature=0.0)
     sllm = llm.as_structured_llm(CandidateInfo)
-    output = sllm.chat(messages)
+    output = sllm.complete(prompt=chat.format(resume_text=resume_text))
+
+    print("extracted_resume output : ", output)
 
     raw = output.raw
     if not isinstance(raw, CandidateInfo):

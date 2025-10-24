@@ -9,3 +9,4 @@ llama-index-embeddings-gemini
 llama-index-llms-gemini
 streamlit
 chromadb
+uuid
